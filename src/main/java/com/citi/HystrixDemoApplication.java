@@ -57,7 +57,7 @@ public static final LongAdder counter = new LongAdder();
 	public String sayHello(){
 		counter.increment();
 		log.info("Inside SayHello::"+counter);
-		URI u = URI.create("http://localhost:8081/sayHelloFromThirdParty");
+		URI u = URI.create("http://thirdparty/sayHelloFromThirdParty");
 		return restTemplate.getForObject(u,String.class);
 		
 		//return "Hello from Hystrix Demo";
